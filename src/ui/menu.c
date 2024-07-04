@@ -2,14 +2,10 @@
 #include <ncurses.h>
 
 #include "menu.h"
+#include "menu_cmd.h"
 
 static int select_main_menu(void);
 static void show_main_menu(void);
-
-static int main_menu_new_game(void);
-static int main_menu_load_game(void);
-static int main_menu_configure(void);
-static int main_menu_exit(void);
 
 static enum main_menu_item cur_main_menu_item;
 static struct main_menu_cfg main_cfgs[NR_MAIN_MENU_ITEMS] = {
@@ -58,34 +54,6 @@ static void show_main_menu(void)
 		}
 	}
 	refresh();
-}
-
-static int main_menu_new_game(void)
-{
-	return 0;
-}
-
-static int main_menu_load_game(void)
-{
-	return 0;
-}
-
-static int main_menu_configure(void)
-{
-	return 0;
-}
-
-static int main_menu_exit(void)
-{
-	int ch;
-
-	attrset(A_BOLD);
-	printw("Press any key to exit\n");
-	refresh();
-
-	ch = getch();
-
-	return ch;
 }
 
 void menu_init(void)
