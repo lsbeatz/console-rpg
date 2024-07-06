@@ -16,6 +16,6 @@ struct main_menu_cfg {
 };
 
 void menu_init(void);
-int do_menu(void);
+int menu_start(void);
 
 #endif /* MENU_H */

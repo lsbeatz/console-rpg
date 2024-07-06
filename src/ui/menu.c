@@ -61,14 +61,14 @@ void menu_init(void)
 	cur_main_menu_item = MAIN_NEW_GAME;
 }
 
-int do_menu(void)
+int menu_start(void)
 {
 	int is_selected = 0;
 
-	while (!is_selected) {
+	do {
 		show_main_menu();
 		is_selected = select_main_menu();
-	}
+	} while (!is_selected);
 
 	printw("menu %d selected\n", 1 + cur_main_menu_item);
 	refresh();

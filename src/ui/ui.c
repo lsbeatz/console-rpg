@@ -23,7 +23,7 @@ int ui_start()
 {
 	int rc;
 
-	rc = do_menu();
+	rc = menu_start();
 
 	return rc;
 }
